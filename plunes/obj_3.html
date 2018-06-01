@@ -1,0 +1,88 @@
+<!--
+## plunes intern assignment objective : 3
+## author : Prince Verma
+## date : 02/06/18 03:30:00
+## version : 1.0
+## done as per the given json file
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plunes Objective 3 :: javascript</title>
+     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+</head>
+<body>
+<div class="container">
+  <h1 id="name">Name : </h1>
+  <h4 id="details"></h4>
+  <table id="batters" class="table table-striped">
+  <h3>Batters<h3>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <table id="topping" class="table table-striped">
+  <h3>Topping<h3>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  
+
+</div>
+
+
+</body>
+<script type="text/javascript">
+var data={
+  "id": "0001",
+  "type": "donut",
+  "name": "Cake",
+  "ppu": 0.55,
+  "batters":
+    {
+      "batter":
+        [
+          { "id": "1001", "type": "Regular" },
+          { "id": "1002", "type": "Chocolate" },
+          { "id": "1003", "type": "Blueberry" },
+          { "id": "1004", "type": "Devil's Food" }
+        ]
+    },
+  "topping":
+    [
+      { "id": "5001", "type": "None" },
+      { "id": "5002", "type": "Glazed" },
+      { "id": "5005", "type": "Sugar" },
+      { "id": "5007", "type": "Powdered Sugar" },
+      { "id": "5006", "type": "Chocolate with Sprinkles" },
+      { "id": "5003", "type": "Chocolate" },
+      { "id": "5004", "type": "Maple" }
+    ]
+};
+$("#name").append(data.name);
+$("#details").append("id : "+data.id+" || "+"ppu : "+data.ppu);
+for (var i=0;i<data.batters.batter.length;i++)
+  $("#batters > tbody").append("<tr><td>"+data.batters.batter[i].id+"</td><td>"+data.batters.batter[i].type+"</td></tr");
+for (var i=0;i<data.topping.length;i++)
+  $("#topping > tbody").append("<tr><td>"+data.topping[i].id+"</td><td>"+data.topping[i].type+"</td></tr");
+</script>
+</html>

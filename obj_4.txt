@@ -1,0 +1,79 @@
+## plunes intern assignment objective : 4
+## author : Prince Verma
+## date : 02/06/18 02:33:00
+## version : 1.0
+
+-----Installing Mongodb -----
+Install mongo on your linux machine as ::
+sudo apt-get install mongodb mobgodb-server
+
+enter password if prompted.
+
+then simply type 
+sudo service mongodb start
+
+if it throws some error to make a directory /db/data or so,
+simply make a dir as 
+sudo mkdir /db
+sudo mkdir /db/data
+
+change permissions to 777 as 
+sudo chmod -R 777 /db
+
+now try starting mongodb with the same command as
+sudo service mongodb start  
+	or
+simply type 
+mongod
+and press enter
+
+mongodb should be start and running up
+
+----creating a database----
+go to terminal after having mongodb running up
+type mongo and press enter
+
+you will get a screen like following
+MongoDB shell version: 2.6.10
+connecting to: test
+> 
+
+to see already exisiting dbs, type 
+show dbs
+press enter
+
+to make a db, simply enter following(eg db name is test)
+use test
+
+now test db is selected.
+you can use various commands to insert, view, update contents of this db, with various collections.
+
+
+----Creating a client on php to connect to mongodb ---
+
+copy the following code and save it in a php file, and host it on localhost server(eg : apache2)
+
+<?php
+   // connect to mongodb
+   $m = new MongoClient();
+	
+   echo "Connection to database successfully";
+   // select a database
+   $db = $m->test;
+   echo "Database test selected";
+?>
+
+-- creating a collection --- 
+<?php
+   // connect to mongodb
+   $m = new MongoClient();
+   echo "Connection to database successfully";
+	
+   // select a database
+   $db = $m->test;
+   echo "Database test selected";
+   $collection = $db->createCollection("test_collection");
+   echo "Collection created succsessfully";
+?>
+
+run the files, on apache2 server and the dbs, collections will be created using php
