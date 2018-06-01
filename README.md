@@ -2,7 +2,7 @@
 
 Disclaimer : All the codes have been written for linux machines(Ubuntu based distros only)
 
-Objective 1 : the source file provided is a clone and customizing /updating css for such page is not a feasible thing so not done.
+Objective 1 : the source file provided is a clone and customizing /updating css for such page is not a feasible thing so not attempted.
 
 Objective 2 : simply run the script : obj_2.py on python3 as obj_2.py -p <folder_name>
 eg ::
